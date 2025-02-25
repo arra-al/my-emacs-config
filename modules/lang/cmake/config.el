@@ -1,0 +1,5 @@
+(require 'eglot)
+(add-to-list 'auto-mode-alist '("CMakeLists\\.txt" . cmake-ts-mode))
+(add-to-list 'eglot-server-programs '((cmake-mode cmake-ts-mode) "/home/gezimi/.venv/bin/cmake-language-server"))
+(add-hook 'cmake-ts-hook 'eglot-ensure)
+(add-hook 'cmake-mode 'eglot-ensure)
